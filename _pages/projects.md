@@ -9,6 +9,8 @@ display_categories: [work, fun]
 horizontal: false
 ---
 
+Since stumbling into [Terrence Tao's advice](https://terrytao.wordpress.com/career-advice/write-down-what-youve-done/) a few years back, I've taken up the habit of writing down the stuff that I learn. Might as well share it :) 
+
 <!-- pages/projects.md -->
 <div class="projects">
 {% if site.enable_project_categories and page.display_categories %}

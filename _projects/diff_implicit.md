@@ -1,35 +1,42 @@
 ---
-layout: page
+layout: distill
 title: Differentiation of implicit functions
 description: 
 img: assets/img/autodiff_implicit_2.png
 importance: 1
 category: math
+authors:
+  - name: Stefano Crotti
+    affiliations:
+      name: Politecnico di Torino, Italy
 ---
 
-<!-- Automatic Differentiation (AutoDiff, AD) is a quite cool set of tricks used to compute derivatives
-numerically up to machine precision. You write a program $$f$$ that given an input $$x$$ returns 
-$$f(x)$$, then turn to your favourite AutoDiff library which will magically compute $$f'(x)$$. -->
+Suppose we have a quantity $$y$$ defined implicitly as the solution of
+$$
+\begin{equation}
+f(x,y)=0
+\end{equation}
+$$
 
-We want to compute the derivative of a function $$f$$. What happens when $$f$$ is defined implicitly, for example by a fixed-point equation?
-Say that you have another function $$g(x, y)$$ and you want to solve for $$x$$ such that $$g=0$$ at fixed $$y$$.
-You can define $$f$$ such that $$g\left(x,f(x)\right)=0$$. So now what is $$f'(x)$$?.
+For each value of $$x$$, we take $$y(x)$$ to be the solution of $$(1)$$.
+Now what is $$\frac{dy}{dx}$$?
 
 Assuming that all the functions at play are sufficiently smooth, we can write
 $$
 \begin{align}
-0 =& \frac{d}{dx} g\left(x,f(x)\right) \\
-  =&   \frac{\partial g}{\partial x} + \left.\frac{\partial g}{\partial y}\right\rvert_{y=f(x)} f'(x)
+0 =& \frac{d}{dx} f\left(x,y(x)\right) \\
+  =&   \frac{\partial f}{\partial x} + \left.\frac{\partial f}{\partial y}\right\rvert_{y(x)} \frac{dy}{dx}
 \end{align}
 $$
 which gives
 $$
 \begin{equation}
-f'(x) = - \frac{\frac{\partial g}{\partial x}}{\left.\frac{\partial g}{\partial y}\right\rvert_{y=f(x)}}
+\frac{dy}{dx} = - \frac{\frac{\partial f}{\partial x}}{\left.\frac{\partial f}{\partial y}\right\rvert_{y(x)}}
 \end{equation}
 $$
 
-Of course my favorite fixed-point equations are the Belief Propagation equations.
+### Example: the Belief Propagation equations.
+
 For an Ising model on a regular graph of degree $$k$$, the self-consistency equation for the cavity field $$u$$ is
 $$
 \begin{equation}
@@ -38,11 +45,11 @@ u = (k-1)\tanh^{-1}\left[\tanh(u)\tanh(J)\right]
 $$
 where $$J$$ is the coupling strength.
 
-For any value of $$J$$, one computes $$u$$ as the fixed point of the above equation. 
+For any value of $$J$$, one computes $$u(J)$$ as the fixed point of the above equation. 
 Then, the magnetization is given by
 $$
 \begin{equation}
-m = \tanh\left(\beta \frac{k}{k-1}u\right) = 
+m = \tanh\left(\beta \frac{k}{k-1}u(J)\right)
 \end{equation}
 $$
 
@@ -61,17 +68,16 @@ What is $$\frac{dm}{dJ}$$?
 To make contact with the notation above, let's define 
 $$
 \begin{equation}
-g(J,u) = (k-1)\tanh^{-1}\left[\tanh(u)\tanh(J)\right] - u
+f(J,u) = (k-1)\tanh^{-1}\left[\tanh(u)\tanh(J)\right] - u
 \end{equation}
 $$
-and $$f:g\left(J,f(J)\right)=0$$.
+We are now able to compute the derivative of $$\frac{du}{dJ}$$ using $$(3)$$ (as long as the denominator is nonzero).
 
-We are now able to compute the derivative of $$u$$ with respect to $$J$$ using $$(3)$$ (as long as the denominator is nonzero).
-Just a final touch of chain rule
+Just a final chain rule
 $$
-\begin{equation}
-\frac{dm}{dJ} = \frac{d}{dJ} \tanh\left(\beta \frac{k}{k-1}f(J)\right)  
-\end{equation}
+\begin{align}
+\frac{dm}{dJ} =\left.\frac{dm}{du}\right\rvert_{u(J)}\frac{du}{dJ}
+\end{align}
 $$
 and we are done:
 

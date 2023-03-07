@@ -3,8 +3,8 @@ layout: page
 title: Notes
 permalink: /notes/
 description:
-nav: false
-nav_order: 2
+nav: true
+nav_order: 3
 # display_categories: [physics, math, programming]
 horizontal: false
 ---

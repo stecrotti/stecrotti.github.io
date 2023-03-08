@@ -21,7 +21,7 @@ $$
 $$
 where $$w(x\to x')$$ is the probability of transitioning from state $$x$$ to state $$x'$$.
 
-Define an abstract vector $$\ket{x}=\ket{x_1,\ldots,x_N}$$ element of a $$N$$-dimensional 
+As explained in <d-cite key="henkel1997reaction"></d-cite>, define an abstract vector $$\ket{x}=\ket{x_1,\ldots,x_N}$$ element of a $$N$$-dimensional 
 Hilbert space, and its dual $$\bra{x}$$ such that 
 $$
 \begin{equation}
@@ -91,7 +91,7 @@ then knowlegde of the ground state of the quantum system directly implies knowle
 steady state of $$p(x,t)$$. Neat!
 
 Even when exact results are not available for such quantum problems, efficient approximation
-techniques such as the Density Matrix Renormalization Group (DMRG) can be employed.
+techniques such as the [Density Matrix Renormalization Group](https://en.wikipedia.org//wiki/Density_matrix_renormalization_group) can be employed.
 
 
 

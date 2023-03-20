@@ -5,6 +5,7 @@ description:
 img: assets/img/autodiff_implicit_2.png
 importance: 1
 category: math
+giscus_comments: true
 authors:
   - name: Stefano Crotti
     affiliations:

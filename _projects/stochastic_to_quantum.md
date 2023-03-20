@@ -5,6 +5,7 @@ description:
 img: assets/img/diffusion_heisenberg.png
 importance: 1
 category: physics
+giscus_comments: true
 bibliography: stochastic_to_quantum.bib
 authors:
   - name: Stefano Crotti

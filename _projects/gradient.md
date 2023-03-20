@@ -5,6 +5,7 @@ description:
 img: assets/img/grad.png
 importance: 1
 category: math
+giscus_comments: true
 bibliography: gradient.bib
 authors:
   - name: Stefano Crotti

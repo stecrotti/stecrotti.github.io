@@ -1,6 +1,6 @@
 ---
 layout: distill
-title: Reweighted Markov processes are computationally challenging 
+title: Reweighted Markov processes
 description: 
 img: 
 importance: 1
@@ -15,6 +15,7 @@ authors:
 
 When I first started working on reweighted stochastic processes, it was not clear to me why they should be computationally more challenging than their "free" version. 
 Here is a tentative explanation of why and to which extent this is true. 
+It was first conceived to be read by a friend who is a physicist but is not used to manipulating probability distributions.
 
 ### Mini review of conditional probability
 
@@ -221,6 +222,5 @@ $$\begin{equation}
 \hat{A}=\frac{\sum_{\mu=1}^{M}\mathcal{A}(\underline{x}^{(\mu)})\Phi(\underline{x}^{(\mu)})}{\sum_{\mu=1}^{M}\Phi(\underline{x}^{(\mu)})}
 \end{equation}$$
 To see that such approximation is a sensible choice, compute the expectation of the numerator and the denominator and verify that their ratio is equal to $$A$$.
-- Find an "effective" Markov process which is as close as possible to the biased one. An idea is to set up a variational problem: look among a class of Markov processes for the one that minimizes the KL divergence with the target distribution $$p\propto W\Phi$$
-\cite{causality}.
+- Find an "effective" Markov process which is as close as possible to the biased one. An idea is to set up a variational problem: look among a class of Markov processes for the one that minimizes the KL divergence with the target distribution $$p\propto W\Phi$$ <d-cite key="causality"></d-cite>.
 - And more...

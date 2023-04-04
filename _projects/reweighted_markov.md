@@ -2,7 +2,7 @@
 layout: distill
 title: Reweighted Markov processes
 description: 
-img: 
+img: assets/img/sirs.png
 importance: 1
 category: maths
 giscus_comments: true
@@ -15,7 +15,7 @@ authors:
 
 When I first started working on reweighted stochastic processes, it was not clear to me why they should be computationally more challenging than their "free" version. 
 Here is a tentative explanation of why and to which extent this is true. 
-It was first conceived to be read by a friend who is a physicist but is not used to manipulating probability distributions.
+It was first conceived to be read by a friend who is a physicist but is not so used to manipulating probability distributions.
 
 ### Mini review of conditional probability
 
@@ -46,7 +46,7 @@ and lowercase respectively, and to simply write $$p(x)$$ for short.
 
 ## Markov processes
 
-A Markov process, also known as Markov chain, is a sequence $$X^{1},X^{2},\ldots,X^{T}$$
+A [Markov process](https://en.wikipedia.org/wiki/Markov_chain), also known as Markov chain, is a sequence $$X^{1},X^{2},\ldots,X^{T}$$
 of random variables with the property that the distribution of $$X^{t}$$ depends only on the value of $$X^{t-1}$$.
 Mathematically this means that $$p(x^{t}|x^{1},x^{2}\ldots,x^{t-1})=p(x^{t}|x^{t-1})$$
 for all $$t=2,\ldots T$$. The starting point is some $$p(x^{1})$$.
@@ -85,7 +85,7 @@ p(x^{t})=\sum_{x^{t-1}}p(x^{t-1},x^{t})=\sum_{x^{t-1}}p(x^{t}|x^{t-1})p(x^{t-1})
 
 with a computational cost of $$\mathcal{O}(qT)$$ where $$q$$ is the
 number of values each $$X^{t}$$ can take.
-- Sample exactly: the distribution is already written in a form that is begging you to sample from it
+- Sample exactly: the distribution is already written in a form that is almost begging you to sample from it
 
 $$
 \begin{equation}
@@ -134,10 +134,16 @@ p(x^{1},x^{2},\ldots,x^{T})=\frac{w^{1}(x^{1}){ \prod_{t=2}^{T}w^{t}(x^{t}|x^{t-
 \end{equation}
 $$
 
-with $$\sum_{x^{t}}w^{t}(x^{t}|x^{t-1})=1$$ and $$Z={\sum_{x^{1},x^{2},\ldots,x^{T}}}w^{1}(x^{1}){\prod_{t=2}^{T}w^{t}(x^{t}|x^{t-1})}\Phi(x^{1},x^{2},\ldots,x^{T})$$.
+with 
+$$\sum_{x^{t}}w^{t}(x^{t}|x^{t-1})=1$$
+and $$Z$$ the normalization constant.
+<!-- $$Z={\sum_{x^{1},x^{2},\ldots,x^{T}}}w^{1}(x^{1}){\prod_{t=2}^{T}w^{t}(x^{t}|x^{t-1})}\Phi(x^{1},x^{2},\ldots,x^{T})$$. -->
 
-This is not a Markov process anymore! It is not true that $$p(x^{t}|x^{1},x^{2}\ldots,x^{t-1})=p(x^{t}|x^{t-1})$$. While in the case without reweighting $$(1)$$ computing $$p(x^{t}|x^{1},x^{2}\ldots,x^{t-1})$$
-as $$\frac{p(x^{1},x^{2},\ldots,x^{t})}{\sum_{x^{t}}p(x^{1},x^{2},\ldots,x^{t})}$$ gives back the Markov property $$p(x^{t}|x^{1},x^{2}\ldots,x^{t-1})=p(x^{t}|x^{t-1})$$, the same procedure fails for a reweighted process.
+This is **not a Markov process** anymore!
+Should you need to convince yourself, try computing $$p(x^{t}|x^{1},x^{2}\ldots,x^{t-1})$$
+as, by definition, $$\frac{p(x^{1},x^{2},\ldots,x^{t})}{\sum_{x^{t}}p(x^{1},x^{2},\ldots,x^{t})}$$.
+In the case without reweighting $$(1)$$ you will get back the Markov property $$p(x^{t}|x^{1},x^{2}\ldots,x^{t-1})=p(x^{t}|x^{t-1})$$.
+The same procedure fails for a reweighted process.
 
 It is not hard to show that **none of the 3 operations that
 were easy for Markov processes are affordable anymore: normalizing,
@@ -156,6 +162,18 @@ w^{t}(x^{t}|x^{t-1}) & =p_{left}\delta(x^{t},L)+(1-p_{left})\delta(x^{t},R)\\
 \end{cases}
 \end{equation}
 $$
+
+Already for such a simple example it is hopefully clear how things became much more involved
+with respect to the case with no reweighting.
+For instance, how does one go about sampling from
+such a distribution? An idea is to draw trajectories from the free distribution $$w^{1}(x^{1}){ \prod_{t=2}^{T}w^{t}(x^{t}|x^{t-1})}$$
+and then discard those samples that do not fulfill the constraint. This is an honest, unbiased sampler.
+However, in cases where the probability of a trajectory satisfying the constraint is very small, the 
+number of discarded samples before finding a good one can become huge, making the whole 
+process a computational nightmare. 
+Indeed, in more complex settings, one is often interested in realizations of the process which
+are extremely rare <d-cite key="crotti2023large"></d-cite>. 
+
 
 ## Multivariate distributions
 
@@ -193,7 +211,7 @@ $$
 The equations above describe the "free" evolution of the dynamics. What happens in the much realistic case where one introduces the observation that some individuals were tested
 at some point and therefore their state at that time is known? Suppose
 a set $$O=\{(j,s)\}_{j\in1:N,s\in1:T}$$ of observations: we know that
-individual $$j$$ was tested at time $$s$$ and the result was $$y_{j}^{s}\in\{S,I\}$$. 
+individual $$j$$ was tested at time $$s$$ and the result was $$y_{j}^{s}\in\{S,I\}.$$ 
 
 By Bayes' formula (which is nothing but a corollary of the definition of conditional probability, really), the probability of an evolution $$\boldsymbol{x^{1}},\ldots,\boldsymbol{x^{T}}$$ given the set of statistically
 independent observations $$Y=\{y_{j}^{s}\}_{j,s\in O}$$ is
@@ -204,12 +222,15 @@ p(\boldsymbol{x}^{1}\boldsymbol{,}\ldots\boldsymbol{,\boldsymbol{\boldsymbol{x}}
 \end{equation}
 $$
 
-where $$p(\boldsymbol{X)}$$ is given by $$(12)$$ and $$p(Y|\boldsymbol{X})=\prod_{(j,s)\in O}\delta(x_{j}^{s},y_{j}^{s})$$.
-Therefore, $$p(\boldsymbol{X}|O)$$ is of the form $$(8)$$.
+where $$p(\boldsymbol{x}^1,\ldots,\boldsymbol{x}^T)$$ is given by $$(12)$$ and
+$$
+p(Y|\boldsymbol{x}^{1}\boldsymbol{,}\ldots\boldsymbol{,\boldsymbol{\boldsymbol{x}}}^{T})=\prod_{(j,s)\in O}\delta(x_{j}^{s},y_{j}^{s})
+$$.
+Therefore, $$p(\boldsymbol{x}^{1}\boldsymbol{,}\ldots\boldsymbol{,\boldsymbol{\boldsymbol{x}}}^{T}|Y)$$ is of the form $$(8)$$.
 
 ## Now what?
 
-It is clear at this point that exact computations on reweighted Markov processes are generally not feasible. However, many approximations were proposed, some of which are listed below. In most cases the goodness of an approximation depends on the particular form of $$W$$ and $$\Phi$$.
+It is clear at this point that exact computations on reweighted Markov processes are generally not feasible. However, approximations have proposed, some of which are listed below. In most cases the goodness of an approximation depends on the particular form of $$W$$ and $$\Phi$$.
 
 - The most straightforward strategy is probably a Monte Carlo approach
 known as importance sampling. Given some observable
@@ -221,6 +242,7 @@ Since $$W$$ is a Markov process we know how to sample from it. To build a Monte 
 $$\begin{equation}
 \hat{A}=\frac{\sum_{\mu=1}^{M}\mathcal{A}(\underline{x}^{(\mu)})\Phi(\underline{x}^{(\mu)})}{\sum_{\mu=1}^{M}\Phi(\underline{x}^{(\mu)})}
 \end{equation}$$
-To see that such approximation is a sensible choice, compute the expectation of the numerator and the denominator and verify that their ratio is equal to $$A$$.
+To see that such approximation is a sensible choice, you can compute the expectation of the numerator and the denominator and verify that their ratio is equal to $$A$$ <d-footnote>In contrast, the expected value of the ratio 
+$\mathbb{E}\hat{A}$ is not equal to $A$! This is something I learnt while reasoning on this topic: importance sampling for unnormalized distributions gives biased estimators</d-footnote>.
 - Find an "effective" Markov process which is as close as possible to the biased one. An idea is to set up a variational problem: look among a class of Markov processes for the one that minimizes the KL divergence with the target distribution $$p\propto W\Phi$$ <d-cite key="causality"></d-cite>.
 - And more...

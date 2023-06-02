@@ -23,4 +23,4 @@ I'm a PhD student at the <a href="https://www.disat.polito.it/research/research_
 We use techniques from the statistical physics of complex systems to study optimization and inference problems across various domains: biology, computer science, epidemic modelling, and more.
 
 During my Master's thesis and first year of PhD I have been working on approximate solutions to the [Closest Vector Problem](https://en.wikipedia.org/wiki/Lattice_problem#Closest_vector_problem_(CVP)).
-I am now focusing on the study of atypical trajectories in some stochastic dynamics.
+I am now focusing on the [study of atypical realization of stochastic dynamics on graphs](https://arxiv.org/abs/2303.17403).

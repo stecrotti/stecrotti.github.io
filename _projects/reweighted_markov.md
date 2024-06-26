@@ -97,7 +97,7 @@ x^{T}\sim & p(x^{T}|x^{T-1})
 \end{equation}
 $$
 
-again with cost $$\mathcal{O}(qT)$$.
+with a cost $$\mathcal{O}(qT)$$.
 
 ### Example: 1D random walk
 

@@ -83,7 +83,7 @@ $$
 p(x^{t})=\sum_{x^{t-1}}p(x^{t-1},x^{t})=\sum_{x^{t-1}}p(x^{t}|x^{t-1})p(x^{t-1})
 \end{equation}\quad\forall t \in 2,\ldots,T$$
 
-with a computational cost of $$\mathcal{O}(qT)$$ where $$q$$ is the
+with a computational cost of $$\mathcal{O}(q^2T)$$ where $$q$$ is the
 number of values each $$X^{t}$$ can take.
 - Sample exactly: the distribution is already written in a form that is almost begging you to sample from it
 

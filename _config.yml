@@ -8,7 +8,7 @@ middle_name:
 last_name: Crotti
 email: stefano.crotti@polito.it
 description: > # the ">" symbol means to ignore newlines until "footer_text:"
-  PhD student in Physics
+  PhD candidate in Physics
 footer_text: >
   Powered by <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio">al-folio</a> theme.
   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
@@ -19,7 +19,7 @@ icon: 🍤 # the emoji used as the favicon (alternatively, provide image name in
 
 url:  https://stecrotti.github.io # the base hostname & protocol for your site
 baseurl:  # the subpath of your site, e.g. /blog/
-last_updated: false # set to true if you want to display last updated in the footer
+last_updated: true # set to true if you want to display last updated in the footer
 impressum_path:  # set to path to include impressum link in the footer, use the same path as permalink in a page, helps to conform with EU GDPR
 
 # -----------------------------------------------------------------------------
@@ -70,7 +70,7 @@ github_username: stecrotti # your GitHub user name
 gitlab_username: # your GitLab user name
 twitter_username: ste_crotti # your Twitter handle
 mastodon_username: # your mastodon instance+username in the format instance.tld/@username
-linkedin_username: # your LinkedIn user name
+linkedin_username: crottis # your LinkedIn user name
 telegram_username: # your Telegram user name
 scholar_userid: b4jR5hkAAAAJ # your Google Scholar ID
 semanticscholar_id: # your Semantic Scholar ID
@@ -117,10 +117,10 @@ bing_site_verification:  # out your bing-site-verification ID (Bing Webmaster)
 # Blog
 # -----------------------------------------------------------------------------
 
-blog_name:  # blog_name will be displayed in your blog page
-blog_nav_title:  # your blog must have a title for it to be displayed in the nav bar
-blog_description: 
-permalink: /blog/:year/:title/
+blog_name: PyBits  # blog_name will be displayed in your blog page
+blog_nav_title: PyBits # your blog must have a title for it to be displayed in the nav bar
+blog_description: A collection of things I learned while learning Python and PyTorch
+permalink: /pybits/:year/:title/
 
 # Pagination
 pagination:
@@ -147,15 +147,15 @@ giscus:
   lang: en
 
 # Disqus comments (DEPRECATED)
-disqus_shortname: al-folio # put your disqus shortname
+# disqus_shortname: al-folio # put your disqus shortname
 # https://help.disqus.com/en/articles/1717111-what-s-a-shortname
 
 # External sources.
 # If you have blog posts published on medium.com or other exteranl sources,
 # you can display them in your blog by adding a link to the RSS feed.
-external_sources:
-  - name: medium.com
-    rss_url: https://medium.com/@al-folio/feed
+# external_sources:
+#   - name: medium.com
+#     rss_url: https://medium.com/@al-folio/feed
 
 # -----------------------------------------------------------------------------
 # Collections
@@ -249,7 +249,7 @@ jekyll-archives:
     tag: '/blog/tag/:name/'
     category: '/blog/category/:name/'
 
-display_tags: ['formatting', 'images', 'links', 'math', 'code'] # this tags will be dispalyed on the front page of your blog
+# display_tags: ['formatting', 'images', 'links', 'math', 'code'] # this tags will be dispalyed on the front page of your blog
 
 # -----------------------------------------------------------------------------
 # Jekyll Scholar

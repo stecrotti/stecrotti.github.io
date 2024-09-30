@@ -48,3 +48,9 @@ The way PyTorch does backprop is by storing inputs and outputs at the time of th
 The backward step is then computed by using those values.
 
 To define custom differentiable functions, write a class for the function, inheriting from `torch.autograd.Function`.
+
+### Tensor dimensions
+When dealing with tensors in pytorch, one could in principle decide arbitrarily how to organize the dimensions: channels, batch index, row, col. What is the preferred order? NCHW format: batch index, channel, row, col.
+
+### Torch Dataset
+A custom Dataset class must implement three functions: `__init__`, `__len__`, and `__getitem__`.

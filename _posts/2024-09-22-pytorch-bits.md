@@ -18,8 +18,10 @@ See also the explanation at the [NumPy docs](https://numpy.org/doc/stable/user/b
 ## Misc
 ### `view`
 PyTorch's `torch.Tensor.view(*size)` method accepts -1 as (at most) one of the provided dimensions to be inferred. Example: `x.view(-1)` returns a flattened version of `x`, whatever the original size.
+
 ### `chunk`
 `torch.chunk`==`torch.Tensor.chunk` splits a big array into chunks. Useful when you need to do linalg (matmul) operations on a set of matrices: first stack them together, then perform the operation which takes advantage of parallelism, fast underlying code etc. Finally retrieve each part using `chunk`.
+
 ### Refactoring
 Apparently it's a good habit to wrap pairs of (conv_layer, relu_layer) in a `torch.nn.Sequential` object, to keep things tidy and debug dimension inconsistencies.
 
@@ -54,3 +56,6 @@ When dealing with tensors in pytorch, one could in principle decide arbitrarily 
 
 ### Torch Dataset
 A custom Dataset class must implement three functions: `__init__`, `__len__`, and `__getitem__`.
+
+### Float precision
+Use `torch.Tensor.half` to convert a tensor to half precision, much faster on a GPU.

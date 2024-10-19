@@ -54,6 +54,8 @@ Python iterators are stateful, meaning that an iterator is an object containing 
 In Python, iterators are managed using the [`yield`](https://www.geeksforgeeks.org/use-yield-keyword-instead-return-keyword-python/) keyword. Placed instead of a `return` statement, it transforms the return of the parent function into an iterator which, once iterated over, executes the code until the next `yield` statement. 
 Automatically, enough information is stored in the iterator object such that it's possible to resume execution at each iteration.
 
+Python comes with an `itertools` standard library. For example, `itertools.islice` is very similar to Julia's `Iterators.take`. 
+
 ### File explorer
 `os.walk`: generates the file names in a directory tree by walking the tree either top-down or bottom-up. For each directory in the tree rooted at directory top (including top itself), it yields a 3-tuple (dirpath, dirnames, filenames).
 

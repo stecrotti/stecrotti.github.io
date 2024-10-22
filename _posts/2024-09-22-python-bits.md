@@ -63,3 +63,18 @@ Python comes with an `itertools` standard library. For example, `itertools.islic
 ## Comparisons with Julia
 ### Closures
 `partial` is Python's equivalent of a closure in Julia.
+
+## Decorators
+Like Julia macros, decorators take a piece of code as input and return a modified version of it to be executed (metaprogramming).
+As an example, recall the [discussion on delegation](https://www.fast.ai/posts/2019-08-06-delegation.html).
+
+### Import of decorator
+To import a decorator, you need to specify it without the "at" (@) at the beginning (not really sure why)
+```python
+from numba import njit
+@njit
+do stuff ...
+```
+
+## Numba
+[Numba](https://numba.pydata.org/) is a library for compiling python code to machine code once, then running the fast version every time the function is called. Just like what happens all the time with Julia!

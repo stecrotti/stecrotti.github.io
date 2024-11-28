@@ -15,6 +15,19 @@ categories:
 Tensor operations in PyTorch: the rules for what happens depending on the size of the input tensors to `torch.matmul` is found [here](https://pytorch.org/docs/stable/generated/torch.matmul.html).
 See also the explanation at the [NumPy docs](https://numpy.org/doc/stable/user/basics.broadcasting.html).
 
+### Selecting multiple rows/columns
+Say you want to apply a given permutation `perm` to a 2D tensor `A`. In PyTorch you do
+```python
+A[perm][:,perm]
+```
+while in Julia you would simply do
+```julia
+A[perm,perm]
+```
+
+### `ones_like`
+`torch.ones_like(A)`: used to construct a tensor full of 1s of the same size of the input argument.
+
 ## Misc
 ### `view`
 PyTorch's `torch.Tensor.view(*size)` method accepts -1 as (at most) one of the provided dimensions to be inferred. Example: `x.view(-1)` returns a flattened version of `x`, whatever the original size.

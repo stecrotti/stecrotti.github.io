@@ -59,6 +59,10 @@ Python comes with an `itertools` standard library. For example, `itertools.islic
 ### File explorer
 `os.walk`: generates the file names in a directory tree by walking the tree either top-down or bottom-up. For each directory in the tree rooted at directory top (including top itself), it yields a 3-tuple (dirpath, dirnames, filenames).
 
+### The `pass` keyword
+It's used as a "do nothing" operation in places where Python does not allow an empty space, e.g. class or function definitions, thus avoiding the raising of errors.
+It can be useful to define the skeleton of a program before actually filling in all the details, or in places where one knows there will be code in the future.
+
 
 ## Comparisons with Julia
 ### Closures

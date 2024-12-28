@@ -25,6 +25,12 @@ while in Julia you would simply do
 A[perm,perm]
 ```
 
+### The `torch_scatter` package
+It's a small auxiliary package (docs [here](https://pytorch-scatter.readthedocs.io/en/latest/index.html)) to perform operations on tensors based on which group each element belongs to.
+
+Example: the way PyTorch Geometric combines GNNs together in a batch is to make a huge adjacency matrix and concatenating vector of features. 
+Say you have a long vector of node features and another of the same length which keeps track of which indices refer to which graph in the batch: then passing the second vector to `scatter_*` will perform operation `*` to each group, returning a vector of length equal to the number of batches.
+
 ### `ones_like`
 `torch.ones_like(A)`: used to construct a tensor full of 1s of the same size of the input argument.
 

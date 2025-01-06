@@ -24,3 +24,5 @@ We use techniques from the statistical physics of complex systems to study optim
 
 During my Master's thesis and first year of PhD I have been working on approximate solutions to the [Closest Vector Problem](https://en.wikipedia.org/wiki/Lattice_problem#Closest_vector_problem_(CVP)).
 I am now focusing on [atypical realization of stochastic dynamics on graphs](https://arxiv.org/abs/2303.17403).
+
+Contact: [s.crotti@outlook.com](mailto:s.crotti@outlook.com).

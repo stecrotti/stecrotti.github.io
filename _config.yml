@@ -126,6 +126,9 @@ permalink: /pybits/:year/:title/
 pagination:
   enabled: true
 
+nav: true
+nav_order: 4
+
 related_blog_posts:
   enabled: false
   max_related: 5

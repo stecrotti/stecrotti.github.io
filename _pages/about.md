@@ -23,6 +23,6 @@ I've just completed a PhD at the <a href="https://www.disat.polito.it/research/r
 We use techniques from the statistical physics of complex systems to study optimization and inference problems across various domains: biology, computer science, epidemic modelling, and more.
 
 During my Master's thesis and first year of PhD I have been working on approximate solutions to the [Closest Vector Problem](https://en.wikipedia.org/wiki/Lattice_problem#Closest_vector_problem_(CVP)).
-I then focused on stochastic processes on graphs, with two projects: one on inference of a partially observed process and atypical realizations, another one on the long-time behavior or steady state
+I then focused on stochastic processes on graphs, with two projects: one on inference of a partially observed process and atypical realizations, another one on the long-time behavior or steady state.
 
-Contact: [s.crotti@outlook.com](mailto:s.crotti@outlook.com).
+Contact: [s.crotti@outlook.com](mailto:s.crotti@outlook.com)

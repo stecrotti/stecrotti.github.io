@@ -1,13 +1,15 @@
 ---
 layout: page
-title: projects
-permalink: /projects/
-description: A growing collection of your cool projects.
+title: Notes
+permalink: /notes/
+description: 
 nav: true
 nav_order: 3
-display_categories: [work, fun]
+# display_categories: [physics, math, programming]
 horizontal: false
 ---
+
+Since stumbling into [Terrence Tao's advice](https://terrytao.wordpress.com/career-advice/write-down-what-youve-done/) a few years back, I've taken up the habit of writing down the stuff that I learn. Might as well share it :)
 
 <!-- pages/projects.md -->
 <div class="projects">

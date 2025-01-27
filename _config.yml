@@ -203,6 +203,7 @@ exclude:
   - README.md
   - readme_preview/
   - vendor
+  - _pages/repositories
 keep_files:
   - CNAME
   - .nojekyll

@@ -7,6 +7,7 @@ nav: true
 nav_order: 4
 ---
 
+- The [Spurious Correlations]() website by Tyler Vigen which computes pairwise correlations between about 25 thousand time-series to find the most surprising ones.
 - The 2025 ICLR [blog post](https://iclr-blogposts.github.io/2025/blog/sparse-autodiff/) on sparse automatic differentiation by Adrian Hill, Guillaume Dalle and Alexis Montoison. Automatic differentiation is probably the most important advance behind deep learning: how good to find it here blended with ingenious ways to enhance code efficiency, the good old coloring problem, and, of course, the Julia language.
 - A [blog post](https://rojefferson.blog/2019/02/04/restricted-boltzmann-machines/) by Ro Jefferson about Restricted Boltzmann Machines and generating functions
 - Friederich Shuller's [course](https://youtube.com/playlist?list=PLFeEvEPtX_0S6vxxiiNPrJbLu9aK1UVC_) on Differential Geometry and General Relativity

@@ -13,7 +13,7 @@ Here are some small projects I carried out to learn about Python, data, and more
 
 Keywords: _Python, web app, data processing_
 
-It takes inspiration from the [Spurious Correlation](https://www.tylervigen.com/spurious-correlations) idea by Tyler Vi, where pairs of timeseries data are checked for unlikely correlations. It is a playful way to remind us how not only that correlation does not imply causation, but that if enough data are compared, some correlation will eventually show up, even if it hides no deep meaning whatsoever.
+It takes inspiration from the [Spurious Correlation](https://www.tylervigen.com/spurious-correlations) idea by Tyler Vigen, where pairs of timeseries data are checked for unlikely correlations. It is a playful way to remind us how not only that correlation does not imply causation, but that if enough data are compared, some correlation will eventually show up, even if it hides no deep meaning whatsoever.
 
 My idea is to do something similar but with country-based data, which can be visualized by means of colorful maps. For example, it might be that population density happens to correlate well with daily listeners of a certain song? It is far from the maturity stage of the original SpuriousCorrelations website (and it will probably always be, as all it was is an exercise, really): what happens in SpuriousCorrelationMaps is that the user can click a button which will plot a random pair of country-based data, along with the Pearson correlation coefficient. One day I hope to have enough data that it makes sense to plot only the highly correlated ones.
 

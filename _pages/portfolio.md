@@ -9,7 +9,7 @@ nav_order: 3
 Here are some small projects about data and machine learning.
 
 
-## Protein structure prediction
+## Protein Structure Prediction
 [Repo](https://github.com/stecrotti/ProteinStructurePrediction)
 
 Keywords: _Computational Biology, Machine Learning, Julia, Protein Folding, Biological Sequences_

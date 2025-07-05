@@ -21,6 +21,6 @@ social: true  # includes social icons at the bottom of the page
 I am a physics PhD with a strong mathematical background and an interdisciplinary education in modelling of complex systems, probabilistic methods and scientific computing.
 I am interested in mathematical and computational challenges, best if driven by virtuous goals.
 
-Check out [my CV](/assets/pdf/cv_crotti.pdf).
+Check out [my CV](/assets/pdf/cv.pdf).
 
 Contact me: [s.crotti@outlook.com](mailto:s.crotti@outlook.com)
